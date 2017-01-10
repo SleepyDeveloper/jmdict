@@ -244,12 +244,10 @@ module JMDict
     results = []
     each_node(node_set, "//#{Tag::ENTRY}") do |entry|
       results << {
-        entry: {
-          ent_seq: entry.xpath("./#{Tag::ENT_SEQ}").text.to_i,
-          k_ele: extract_k_ele(entry.xpath("./#{Tag::K_ELE}")),
-          r_ele: extract_r_ele(entry.xpath("./#{Tag::R_ELE}")),
-          sense: extract_sense(entry.xpath("./#{Tag::SENSE}"))
-        }
+        ent_seq: entry.xpath("./#{Tag::ENT_SEQ}").text.to_i,
+        k_ele: extract_k_ele(entry.xpath("./#{Tag::K_ELE}")),
+        r_ele: extract_r_ele(entry.xpath("./#{Tag::R_ELE}")),
+        sense: extract_sense(entry.xpath("./#{Tag::SENSE}"))        
       }
     end
     results
