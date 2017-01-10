@@ -178,7 +178,7 @@ module JMDict
         field: extract_field(node),
         misc: extract_misc(node),
         s_inf: extract_s_inf(node),
-        language_sources: extract_lsource(node),
+        language_sources: extract_lsources(node),
         dial: extract_dial(node),
         gloss: extract_gloss(node)
       }
