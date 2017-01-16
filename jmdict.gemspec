@@ -15,9 +15,10 @@ Gem::Specification.new do |spec|
   spec.homepage = "http://github.com/sleepydeveloper"
   spec.license = "MIT"
 
-  spec.files = %w( README.md jmdict.gemspec ) + Dir['lib/**/*.rb']
+  spec.files = %w( README.md jmdict.gemspec ) + Dir['lib/**/*.rb'] + Dir["misc/.*[a-zA-Z_]"]
+  spec.executables << 'jmsplit'
   #spec.test_files = []
-  spec.require_paths = ["lib"]
+  spec.require_paths = ["lib", "misc"]
 
   spec.required_ruby_version = '>= 2.0.0'
 

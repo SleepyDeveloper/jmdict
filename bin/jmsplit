@@ -1,0 +1,12 @@
+#!/usr/bin/env ruby
+
+require 'trollop'
+require 'jmdict'
+
+opts = Trollop::options do
+  opt :output_folder, 'folder', type: :string, required: true
+  opt :file, 'Path to JMDict file', type: :string, required: true
+  opt :entries_per_file, 'Number of entries per file. Default 1000', type: :string
+end
+
+JMDict.split(opts)
