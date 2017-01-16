@@ -4,6 +4,7 @@ require 'error'
 require 'constants'
 
 require 'converter'
+require 'splitter'
 
 require 'base'
 require 'gloss'
