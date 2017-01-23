@@ -10,7 +10,7 @@ module JMDict
 
     def readings(**options)
       if options[:include_main]
-        @readings.unshift(@main)
+        [@main] + @readings
       else
         @readings
       end
