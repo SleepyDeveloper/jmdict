@@ -1,11 +1,19 @@
 module JMDict
   class Word < Base
-    attr_accessor :ent_seq, :main, :readings, :senses
+    attr_accessor :ent_seq, :main, :senses
     def initialize(json)
       super(json)
       @ent_seq = json[:ent_seq]
       @readings = kanji_and_pronounciation(json[:k_ele], json[:r_ele])
       @senses = get_senses(json[:sense])
+    end
+
+    def readings(**options)
+      if options[:include_main]
+        @readings.unshift(@main)
+      else
+        @readings
+      end
     end
 
     private
@@ -65,7 +73,7 @@ module JMDict
         else
           readings << reading
         end
-      end 
+      end
       return readings, no_kanji
     end
 
